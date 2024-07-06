@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mockito/annotations.dart';
 import 'package:pokemon_battle_app/domain/entities/move.dart';
 import 'package:pokemon_battle_app/domain/entities/pokemon.dart';
 import 'package:pokemon_battle_app/domain/entities/stats.dart';
@@ -7,8 +8,9 @@ import 'package:pokemon_battle_app/domain/enums/pokemon_type.dart';
 import 'package:pokemon_battle_app/domain/repositories/pokemon_repository.dart';
 import 'package:pokemon_battle_app/domain/services/battle_service.dart';
 
-class MockPokemonRepository extends Mock implements PokemonRepository {}
+import 'battle_service_test.mocks.dart';
 
+@GenerateMocks([PokemonRepository])
 void main() {
   group('BattleService', () {
     final mockRepository = MockPokemonRepository();
@@ -32,12 +34,15 @@ void main() {
       type: PokemonType.fire,
     );
 
-    test('should start a battle and print the correct message', () async {
+    setUp(() {
+      // setUp関数内でモックの設定を行う
       when(mockRepository.getPokemon('Pikachu'))
           .thenAnswer((_) async => pikachu);
       when(mockRepository.getPokemon('Charmander'))
           .thenAnswer((_) async => charmander);
+    });
 
+    test('should start a battle and print the correct message', () async {
       await battleService.startBattle('Pikachu', 'Charmander');
 
       verify(mockRepository.getPokemon('Pikachu')).called(1);
