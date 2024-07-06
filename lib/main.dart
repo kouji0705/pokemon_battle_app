@@ -8,13 +8,12 @@ void main() {
 class PokemonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Pokemon App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: AppRouter.home,
-      onGenerateRoute: AppRouter.generateRoute,
+      routerConfig: router,
     );
   }
 }
