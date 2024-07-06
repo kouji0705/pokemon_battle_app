@@ -58,7 +58,7 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
           context.go('/search?query=example');
           break;
         case 2:
-          context.go('/profile');
+          context.go('/info');
           break;
       }
     });
@@ -83,7 +83,7 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'Info',
           ),
         ],
         currentIndex: _selectedIndex,
