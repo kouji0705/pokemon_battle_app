@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'models/pokemon.dart';
-import 'data/sample_data.dart';
+import '../models/pokemon.dart';
+import '../data/sample_data.dart';
 
-class PokemonBattlePage extends StatelessWidget {
+class Battle extends StatelessWidget {
   final Pokemon pokemon1 = pikachu;
   // final Pokemon pokemon2 = charmander;
 
