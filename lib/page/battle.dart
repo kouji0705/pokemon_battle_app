@@ -4,7 +4,6 @@ import '../data/sample_data.dart';
 
 class BattlePage extends StatelessWidget {
   final Pokemon pokemon1 = pikachu;
-  // final Pokemon pokemon2 = charmander;
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +11,13 @@ class BattlePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Pokemon Battle'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _buildPokemonInfo(pokemon1),
-          // _buildPokemonInfo(pokemon2),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildPokemonInfo(pokemon1),
+          ],
+        ),
       ),
     );
   }
