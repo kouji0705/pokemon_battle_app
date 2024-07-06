@@ -4,7 +4,7 @@ import 'data/sample_data.dart';
 
 class PokemonBattlePage extends StatelessWidget {
   final Pokemon pokemon1 = pikachu;
-  final Pokemon pokemon2 = charmander;
+  // final Pokemon pokemon2 = charmander;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class PokemonBattlePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _buildPokemonInfo(pokemon1),
-          _buildPokemonInfo(pokemon2),
+          // _buildPokemonInfo(pokemon2),
         ],
       ),
     );
